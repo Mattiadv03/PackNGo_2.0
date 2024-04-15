@@ -23,13 +23,13 @@
                 x:Name="buttonCreaVacanza_MainPage"
                 Text="Crea vacanza" 
                 Clicked="ButtonCreaVacanza_Clicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Center" />
 
             <Button
                 x:Name="buttonLeMieVacanze_MainPage"
                 Text="Le mie vacanze"
                 Clicked="ButtonLeMieVacanze_Clicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Center" />
         </VerticalStackLayout>
     </ScrollView>
 

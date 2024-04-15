@@ -8,7 +8,11 @@
             Style="{StaticResource Headline}"
             SemanticProperties.HeadingLevel="Level1"
             HorizontalOptions="Center" />
-        
-        
+
+        <Button
+            x:Name="buttonTornaIndietro_CreaVacanza"
+            Text="Torna indietro"
+            HorizontalOptions="Center"
+            Clicked="ButtonTornaIndietro_CreaVacanza_Clicked" />
     </VerticalStackLayout>
 </ContentPage>

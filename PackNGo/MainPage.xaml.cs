@@ -2,23 +2,28 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
+
+            // Preparo l'evento di pressione della buttonCreaValigia
+            buttonCreaVacanza_MainPage.Clicked += ButtonCreaVacanza_Clicked;
+
+            // Preparo l'evento di pressione della buttonLeMiePrenotazioni
+            buttonLeMieVacanze_MainPage.Clicked += ButtonLeMieVacanze_Clicked;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void ButtonCreaVacanza_Clicked(object? sender, EventArgs e)
         {
-            count++;
+            // Lo mando nella pagina di creazione della vacanza
+            Navigation.PushAsync(new CreaVacanza());
+        }
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        private void ButtonLeMieVacanze_Clicked(object? sender, EventArgs e)
+        {
+            // Lo mando nella pagina di visualizzazione delle sue vacanze
+            Navigation.PushAsync(new LeMieVacanze());
         }
     }
 

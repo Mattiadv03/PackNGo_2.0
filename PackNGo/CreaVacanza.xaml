@@ -26,6 +26,7 @@
         <!-- Numero di notti -->
         <Label
             Text="Scegli il numero di notti*"
+            x:Name="labelNumeroDiNotti"
             SemanticProperties.HeadingLevel="Level2"
             HorizontalOptions="Center" />
 
@@ -63,7 +64,44 @@
             </Label>
     
         </HorizontalStackLayout>
+        
+        <!-- Scelta della stagione -->
+        <Label
+            Text="Scegli la stagione*"
+            SemanticProperties.HeadingLevel="Level2"
+            HorizontalOptions="Center" />
 
+        <FlexLayout JustifyContent="Center" Wrap="Wrap" VerticalOptions="Start">
+            <!-- Primavera -->
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <ImageButton Source="primavera.png" x:Name="imageButtonPrimavera" Clicked="" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
+
+                <Label Text="Primavera" HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+            <!-- Estate -->
+            <StackLayout HorizontalOptions="Center">
+                <ImageButton Source="estate.png" x:Name="imageButtonEstate" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
+
+                <Label Text="Estate" HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+            <!-- Autunno -->
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <ImageButton Source="autunno.png" x:Name="imageButtonAutunno" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
+
+                <Label Text="Autunno" HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+            <!-- Inverno -->
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <ImageButton Source="inverno.png" x:Name="imageButtonInverno" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
+
+                <Label Text="Inverno" HorizontalTextAlignment="Center" />
+            </StackLayout>
+        </FlexLayout>
+
+        <!-- Torna indietro -->
         <Button
             x:Name="buttonTornaIndietro_CreaVacanza"
             Text="Torna indietro"

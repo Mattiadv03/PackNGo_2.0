@@ -10,13 +10,13 @@ public partial class CreaVacanza : ContentPage
 
         sliderNumeroNotti_CreaVacanza.ValueChanged += SliderNumeroNotti_CreaVacanza_ValueChanged;
 
-        imageButtonPrimavera.Clicked += ImageButtonPrimavera_Clicked;
+        imageButtonPrimavera_CreaVacanza.Clicked += ImageButtonPrimavera_Clicked;
 
-        imageButtonEstate.Clicked += ImageButtonEstate_Clicked;
+        imageButtonEstate_CreaVacanza.Clicked += ImageButtonEstate_Clicked;
 
-        imageButtonAutunno.Clicked += ImageButtonAutunno_Clicked;
+        imageButtonAutunno_CreaVacanza.Clicked += ImageButtonAutunno_Clicked;
 
-        imageButtonInverno.Clicked += ImageButtonInverno_Clicked;
+        imageButtonInverno_CreaVacanza.Clicked += ImageButtonInverno_Clicked;
 	}
 
     // Creo la varibile del numero di notti
@@ -46,7 +46,7 @@ public partial class CreaVacanza : ContentPage
     {
         // Controllo che l'utente abbia inserito il nome della vacanza
         string nomeVacanza = entryNomeVacanza_CreaVacanza.Text;
-        if (nomeVacanza.Length == 0 && nomeVacanza == " ")
+        if (nomeVacanza is null && nomeVacanza == " ")
         {
             nomeVacanza = "Vacanza Test " + DateTime.Now.ToString();
         }
@@ -98,8 +98,10 @@ public partial class CreaVacanza : ContentPage
 
     private void SliderNumeroNotti_CreaVacanza_ValueChanged(object? sender, ValueChangedEventArgs e)
     {
+        numeroNotti = Convert.ToInt32(sliderNumeroNotti_CreaVacanza.Value);
+
         // Mostro il valore corrente
-        labelValoreSlider_CreaVacanza.Text = "La vacanza durerà " + Convert.ToString(Convert.ToInt32(sliderNumeroNotti_CreaVacanza.Value)) + " notti";
+        labelValoreSlider_CreaVacanza.Text = "La vacanza durerà " + Convert.ToString(numeroNotti) + " notti";
     }
 
     private void ButtonTornaIndietro_CreaVacanza_Clicked(object? sender, EventArgs e)

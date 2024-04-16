@@ -73,29 +73,29 @@
 
         <FlexLayout JustifyContent="Center" Wrap="Wrap" VerticalOptions="Start">
             <!-- Primavera -->
-            <StackLayout HorizontalOptions="CenterAndExpand">
-                <ImageButton Source="primavera.png" x:Name="imageButtonPrimavera" Clicked="" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
+            <StackLayout HorizontalOptions="Center">
+                <ImageButton Source="primavera.png" x:Name="imageButtonPrimavera_CreaVacanza" Clicked="ImageButtonPrimavera_Clicked" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
 
                 <Label Text="Primavera" HorizontalTextAlignment="Center" />
             </StackLayout>
 
             <!-- Estate -->
             <StackLayout HorizontalOptions="Center">
-                <ImageButton Source="estate.png" x:Name="imageButtonEstate" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
+                <ImageButton Source="estate.png" x:Name="imageButtonEstate_CreaVacanza" Clicked="ImageButtonEstate_Clicked" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
 
                 <Label Text="Estate" HorizontalTextAlignment="Center" />
             </StackLayout>
 
             <!-- Autunno -->
-            <StackLayout HorizontalOptions="CenterAndExpand">
-                <ImageButton Source="autunno.png" x:Name="imageButtonAutunno" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
+            <StackLayout HorizontalOptions="Center">
+                <ImageButton Source="autunno.png" x:Name="imageButtonAutunno_CreaVacanza" Clicked="ImageButtonAutunno_Clicked" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
 
                 <Label Text="Autunno" HorizontalTextAlignment="Center" />
             </StackLayout>
 
             <!-- Inverno -->
-            <StackLayout HorizontalOptions="CenterAndExpand">
-                <ImageButton Source="inverno.png" x:Name="imageButtonInverno" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
+            <StackLayout HorizontalOptions="Center">
+                <ImageButton Source="inverno.png" x:Name="imageButtonInverno_CreaVacanza" Clicked="ImageButtonInverno_Clicked" MaximumWidthRequest="130" MaximumHeightRequest="150" Aspect="AspectFit" BackgroundColor="#1f1f1f" />
 
                 <Label Text="Inverno" HorizontalTextAlignment="Center" />
             </StackLayout>

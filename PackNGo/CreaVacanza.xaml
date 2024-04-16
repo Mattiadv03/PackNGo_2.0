@@ -3,11 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PackNGo.CreaVacanza">
     <VerticalStackLayout>
+        <!-- Titolo -->
         <Label
             Text="Crea la tua vacanza"
             Style="{StaticResource Headline}"
             SemanticProperties.HeadingLevel="Level1"
             HorizontalOptions="Center" />
+
+        <!-- Nome vacanza -->
+        <Label
+            Text="Inserisci il nome della vacanza*"
+            SemanticProperties.HeadingLevel="Level2"
+            HorizontalOptions="Center" />
+
+        <Entry
+            x:Name="entryNomeVacanza_CreaVacanza"
+            Placeholder="Inserisci il nome della vacanza..."
+            HorizontalTextAlignment="Center"
+            HorizontalOptions="CenterAndExpand"
+            ClearButtonVisibility="WhileEditing" />        <!-- Bottone per cancellare il contenuto -->
+
+        <!-- Numero di notti -->
+        <Label
+            Text="Scegli il numero di notti*"
+            SemanticProperties.HeadingLevel="Level2"
+            HorizontalOptions="Center" />
+
+        <Slider
+            x:Name="sliderNumeroNotti_CreaVacanza"
+            Minimum="1"
+            Maximum="30"
+            ValueChanged="SliderNumeroNotti_CreaVacanza_ValueChanged"
+            MinimumTrackColor="#ac99ea" />
+        
+        <Label
+            x:Name="labelValoreSlider_CreaVacanza"
+            SemanticProperties.HeadingLevel="Level2"
+            HorizontalOptions="Center"
+            TextColor="#9880e5" />
+
+        <!-- Gita in giornata -->
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <CheckBox
+                x:Name="checkboxGitaInGiornata_CreaVacanza"
+                CheckedChanged="CheckboxGitaInGiornata_CheckedChanged"
+                HorizontalOptions="Center"
+                VerticalOptions = "Center"
+                Color="#ac99ea" />
+
+            <Label
+                x:Name="labelGitaInGiornata_CreaVacanza"
+                Text="Gita in giornata"
+                HorizontalOptions="Center"
+                VerticalOptions = "Center" >
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+    
+        </HorizontalStackLayout>
 
         <Button
             x:Name="buttonTornaIndietro_CreaVacanza"

@@ -1,5 +1,5 @@
 {
-    "Crema solare": ["Crema solare corpo", "Crema solare viso"],
+    "Crema_solare": ["Crema solare corpo", "Crema solare viso"],
     
     "Lavoro": [ "Computer", "Alimentatore computer", "Tappetino", "Mouse", "Occhiali anti luce blu"],
     
@@ -9,7 +9,7 @@
     
     "Campeggio": ["Materassino", "Pompa materassino", "Sacco a pelo", "Cuscino gonfiabile"],
     
-    "Piscina/Mare": {
+    "Piscina_Mare": {
         "Costume": "numeroDiVolte * 1",
         "Cuffia": "numeroDiVolte / 4",
         "Telo mare": 1,

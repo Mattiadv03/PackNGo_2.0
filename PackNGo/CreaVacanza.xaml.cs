@@ -54,7 +54,7 @@ public partial class CreaVacanza : ContentPage
         // Controllo il numero di notti
         if(!(numeroNotti == -1))
         {
-            Navigation.PushAsync(new ScegliTipologia(nomeVacanza, numeroNotti, stagione));
+            Navigation.PushAsync(new ScegliTipologia(nomeVacanza!, numeroNotti, stagione));
         }
         else
         {

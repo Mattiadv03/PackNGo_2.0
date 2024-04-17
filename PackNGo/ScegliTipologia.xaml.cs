@@ -10,7 +10,9 @@ public partial class ScegliTipologia : ContentPage
 		InitializeComponent();
 
         // Popolo FlexLayout
-        leggiTipologieAsync();
+        Task popolaTipologie = leggiTipologieAsync();
+
+        
     }
 
     private async Task leggiTipologieAsync()
@@ -34,39 +36,48 @@ public partial class ScegliTipologia : ContentPage
                 // Ottiengo il corpo della risposta
                 string data = await response.Content.ReadAsStringAsync();
 
-                List<string> listaTipologie = JsonConvert.DeserializeObject<List<string>>(data);
-
-                foreach (var tipologia in listaTipologie)
+                if(data is not null)
                 {
-                    // Creo lo stackLayout che conterrà imageButton e label
-                    StackLayout layout = new StackLayout
+                    List<string> listaTipologie = JsonConvert.DeserializeObject<List<string>>(data)!;
+
+                    foreach (var tipologia in listaTipologie)
                     {
-                        HorizontalOptions = LayoutOptions.Center
-                    };
+                        // Creo lo stackLayout che conterrà imageButton e label
+                        StackLayout layout = new StackLayout
+                        {
+                            HorizontalOptions = LayoutOptions.Center
+                        };
 
-                    // Creo un imageButton per ogni tipologia
-                    ImageButton imageButton = new ImageButton
-                    {
-                        Source = tipologia.Replace(" ", "") + ".png",
-                        MaximumWidthRequest = 130,
-                        MaximumHeightRequest = 150,
-                        Aspect = Aspect.AspectFit,
-                        BackgroundColor = Color.FromHex("#1f1f1f")
-                    };
+                        // Creo un imageButton per ogni tipologia
+                        ImageButton imageButton = new ImageButton
+                        {
+                            Source = tipologia.Replace(" ", "") + ".png",
+                            MaximumWidthRequest = 130,
+                            MaximumHeightRequest = 150,
+                            Aspect = Aspect.AspectFit,
+                            BackgroundColor = Color.FromArgb("#1f1f1f"),
+                            Margin = new Thickness(10, 0)
+                        };
+                    
+                        // Creo la label associata
+                        Label label = new Label
+                        {
+                            Text = tipologia,
+                            HorizontalOptions = LayoutOptions.Center,
+                            Margin = new Thickness(0, 5)
+                        };
 
-                    // Creo la label associata
-                    Label label = new Label
-                    {
-                        Text = tipologia,
-                        HorizontalOptions = LayoutOptions.Center
-                    };
+                        // Aggiungo allo StackLayout
+                        layout.Children.Add(imageButton);
+                        layout.Children.Add(label);
 
-                    // Aggiungo allo StackLayout
-                    layout.Children.Add(imageButton);
-                    layout.Children.Add(label);
-
-                    // Aggiungo al FlexLayout
-                    flexLayoutTipologie_ScegliTipologia.Children.Add(layout);
+                        // Aggiungo al FlexLayout
+                        flexLayoutTipologie_ScegliTipologia.Children.Add(layout);
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Errore", "Errore durante la lettura del file", "OK");
                 }
             }
             else

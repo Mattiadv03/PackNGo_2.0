@@ -4,7 +4,23 @@
              x:Class="PackNGo.Optionals"
              Title="Optionals">
     <VerticalStackLayout>
-        <Label 
-            x:Name="test" />
+        <!-- Titolo -->
+        <Label
+            Text="Scegli gli optionals"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1"
+            HorizontalOptions="Center" />
+
+        <!-- Optionals -->
+        <FlexLayout x:Name="flexLayoutTipologie_ScegliTipologia" JustifyContent="Center" Wrap="Wrap" VerticalOptions="Start">
+            <!-- Popolo dinamicamente in base alle tipologie -->
+        </FlexLayout>
+
+        <!-- Torna indietro -->
+        <Button
+            x:Name="buttonTornaIndietro_CreaVacanza"
+            Text="Torna indietro"
+            HorizontalOptions="Center"
+            Clicked="ButtonTornaIndietro_CreaVacanza_Clicked" />
     </VerticalStackLayout>
 </ContentPage>

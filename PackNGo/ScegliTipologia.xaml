@@ -10,6 +10,7 @@
             SemanticProperties.HeadingLevel="Level1"
             HorizontalOptions="Center" />
 
+        <!-- Tipologie -->
         <FlexLayout x:Name="flexLayoutTipologie_ScegliTipologia" JustifyContent="Center" Wrap="Wrap" VerticalOptions="Start">
             <!-- Popolo dinamicamente in base alle tipologie -->
         </FlexLayout>

@@ -18,6 +18,12 @@ public partial class Optionals : ContentPage
         this.stagione = stagione;
         this.tipologiaVacanza = tipologiaVacanza;
 
-        
+        buttonTornaIndietro_CreaVacanza.Clicked += ButtonTornaIndietro_CreaVacanza_Clicked;
+    }
+
+    private void ButtonTornaIndietro_CreaVacanza_Clicked(object? sender, EventArgs e)
+    {
+        // Torno alla pagina ScegliTipologia
+        Navigation.PushAsync(new ScegliTipologia(nomeVacanza, numeroNotti, stagione));
     }
 }

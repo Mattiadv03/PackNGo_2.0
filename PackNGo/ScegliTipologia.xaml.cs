@@ -20,6 +20,8 @@ public partial class ScegliTipologia : ContentPage
 
         // Popolo FlexLayout
         Task popolaTipologie = popolaTipologieAsync();
+
+        buttonTornaIndietro_CreaVacanza.Clicked += ButtonTornaIndietro_CreaVacanza_Clicked;
     }
 
     private async Task popolaTipologieAsync()
@@ -120,7 +122,7 @@ public partial class ScegliTipologia : ContentPage
 
     private void ButtonTornaIndietro_CreaVacanza_Clicked(object? sender, EventArgs e)
     {
-        // Torno alla MainPage
+        // Torno alla pagina CreaVacanze
         Navigation.PushAsync(new CreaVacanza());
     }
 }

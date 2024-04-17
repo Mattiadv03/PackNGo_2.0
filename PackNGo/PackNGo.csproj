@@ -70,6 +70,9 @@
 	  <MauiXaml Update="LeMieVacanze.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Optionals.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ScegliTipologia.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

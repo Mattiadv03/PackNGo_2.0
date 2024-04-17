@@ -5,17 +5,24 @@ namespace PackNGo;
 
 public partial class ScegliTipologia : ContentPage
 {
-	public ScegliTipologia(string nomeVacanza, int numeroNotti, string stagione)
+    string nomeVacanza;
+    int numeroNotti;
+    string stagione;
+
+    public ScegliTipologia(string nomeVacanza, int numeroNotti, string stagione)
 	{
 		InitializeComponent();
 
-        // Popolo FlexLayout
-        Task popolaTipologie = leggiTipologieAsync();
+        // Salvo i valori dal CreaVacanza
+        this.nomeVacanza = nomeVacanza;
+        this.numeroNotti = numeroNotti;
+        this.stagione = stagione;
 
-        
+        // Popolo FlexLayout
+        Task popolaTipologie = popolaTipologieAsync();
     }
 
-    private async Task leggiTipologieAsync()
+    private async Task popolaTipologieAsync()
     {
         // Controllo se è connesso a internet
         NetworkAccess accessType = Connectivity.Current.NetworkAccess;
@@ -58,7 +65,10 @@ public partial class ScegliTipologia : ContentPage
                             BackgroundColor = Color.FromArgb("#1f1f1f"),
                             Margin = new Thickness(10, 0)
                         };
-                    
+
+                        // Associo l'evento di click
+                        imageButton.Clicked += ImageButton_Clicked;
+
                         // Creo la label associata
                         Label label = new Label
                         {
@@ -89,6 +99,23 @@ public partial class ScegliTipologia : ContentPage
         {
             await DisplayAlert("Errore", "Connettiti a internet per utilizzare l'applicazione", "OK");
         }
+    }
+
+    private void ImageButton_Clicked(object? sender, EventArgs e)
+    {
+        // Prendo la tipologia scelta
+        ImageButton? imageButtonTipologiaVacanza = sender as ImageButton;
+
+        // Prendo il nome del file
+        string? nomeFileImageButton = imageButtonTipologiaVacanza!.Source.ToString();
+
+        // Tolgo l'estensione del file
+        string tipologiaVacanza = nomeFileImageButton!.Replace(".png", "");
+
+        // Tolgo l'intestazione "File: "
+        tipologiaVacanza = tipologiaVacanza.Replace("File: ", "");
+
+        Navigation.PushAsync(new Optionals(nomeVacanza, numeroNotti, stagione, tipologiaVacanza));
     }
 
     private void ButtonTornaIndietro_CreaVacanza_Clicked(object? sender, EventArgs e)

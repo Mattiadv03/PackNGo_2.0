@@ -46,7 +46,7 @@ public partial class CreaVacanza : ContentPage
     {
         // Controllo che l'utente abbia inserito il nome della vacanza
         string nomeVacanza = entryNomeVacanza_CreaVacanza.Text;
-        if (nomeVacanza is null && nomeVacanza == " ")
+        if (nomeVacanza is null || nomeVacanza == " ")
         {
             nomeVacanza = "Vacanza Test " + DateTime.Now.ToString();
         }

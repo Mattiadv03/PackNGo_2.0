@@ -18,10 +18,10 @@ public partial class ScegliTipologia : ContentPage
         this.numeroNotti = numeroNotti;
         this.stagione = stagione;
 
-        // Popolo FlexLayout
+        // Popolo il FlexLayout
         Task popolaTipologie = popolaTipologieAsync();
 
-        buttonTornaIndietro_CreaVacanza.Clicked += ButtonTornaIndietro_CreaVacanza_Clicked;
+        buttonTornaIndietro_ScegliTipologia.Clicked += ButtonTornaIndietro_ScegliTipologia_Clicked;
     }
 
     private async Task popolaTipologieAsync()
@@ -42,7 +42,7 @@ public partial class ScegliTipologia : ContentPage
 
             if (response.IsSuccessStatusCode)
             {
-                // Ottiengo il corpo della risposta
+                // Ottengo il corpo della risposta
                 string data = await response.Content.ReadAsStringAsync();
 
                 if(data is not null)
@@ -120,7 +120,7 @@ public partial class ScegliTipologia : ContentPage
         Navigation.PushAsync(new Optionals(nomeVacanza, numeroNotti, stagione, tipologiaVacanza));
     }
 
-    private void ButtonTornaIndietro_CreaVacanza_Clicked(object? sender, EventArgs e)
+    private void ButtonTornaIndietro_ScegliTipologia_Clicked(object? sender, EventArgs e)
     {
         // Torno alla pagina CreaVacanze
         Navigation.PushAsync(new CreaVacanza());

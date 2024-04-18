@@ -17,9 +17,9 @@
 
         <!-- Torna indietro -->
         <Button
-            x:Name="buttonTornaIndietro_CreaVacanza"
+            x:Name="buttonTornaIndietro_ScegliTipologia"
             Text="Torna indietro"
             HorizontalOptions="Center"
-            Clicked="ButtonTornaIndietro_CreaVacanza_Clicked" />
+            Clicked="ButtonTornaIndietro_ScegliTipologia_Clicked" />
     </VerticalStackLayout>
 </ContentPage>

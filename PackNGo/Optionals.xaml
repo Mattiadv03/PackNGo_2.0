@@ -11,7 +11,7 @@
             HorizontalOptions="Center" />
 
         <!-- Optionals -->
-        <FlexLayout x:Name="flexLayoutTipologie_Optionals" JustifyContent="Center" Wrap="Wrap" VerticalOptions="Start">
+        <FlexLayout x:Name="flexLayoutTipologie_Optionals" JustifyContent="Center" HorizontalOptions="Center" Direction="Column" VerticalOptions="Start">
             <!-- Popolo dinamicamente in base alle tipologie -->
         </FlexLayout>
 

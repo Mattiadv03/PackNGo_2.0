@@ -1,0 +1,36 @@
+{
+    "Crema_solare": ["Crema solare corpo", "Crema solare viso"],
+    
+    "Lavoro": [ "Computer", "Alimentatore computer", "Tappetino", "Mouse", "Occhiali anti luce blu"],
+    
+    "Svago": ["Carte da briscola", "Carte da scala 40", "Libro"],
+    
+    "Pioggia": ["Kway", "Poncho", "Ombrello"],
+    
+    "Campeggio": ["Materassino", "Pompa materassino", "Sacco a pelo", "Cuscino gonfiabile"],
+    
+    "Piscina_Mare": {
+        "Costume": "numeroDiVolte * 1",
+        "Cuffia": "numeroDiVolte / 4",
+        "Telo mare": 1,
+        "Borsetta roba onta piscina/mare": 1
+    },
+    
+    "Bicicletta": {
+        "Maglietta tecnica": "numeroDiVolte * 1",
+        "Pantaloni da bici": "numeroDiVolte / 2",
+        "Calze tecniche": "numeroDiVolte * 1",
+        "Scarpe da ginnastica per la bicicletta": 1
+    },
+
+    "Neve": {
+        "Giacca da neve": 2,
+        "Pantaloni da neve": 2,
+        "Calze grosse da neve": 3,
+        "Scarponcini/Doposcii": 1,
+        "Berretto da neve": 1,
+        "Scaldacollo": 1,
+        "Guanti da neve": 1,
+        "Calza maglia": 1
+    }
+}

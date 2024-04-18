@@ -64,6 +64,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ComponiValigia.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="CreaVacanza.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

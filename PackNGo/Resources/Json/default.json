@@ -1,0 +1,21 @@
+{
+    "Beauty": {
+        "Denti": ["Spazzolino", "Dentifricio", "Filo interdentale"],
+        "Doccia": ["Shampoo", "Bagno doccia", "Accappatoio", "Asciugamano piccolo", "Pettine", "Deodorante", "Ciabatte"],
+        "Cotton fioc": "numeroDiGiorni / 2",
+        "Cera": "numeroDiGiorni",
+        "Cerotti": ["Cerotti normali", "Cerotti vesciche"],
+        "Extra": ["Profumo", "Lametta barba", "Pasta fissan", "Tachipirina"]
+    },
+
+    "Elettronica": ["Alimentatore celluare", "Cavo usb-c", "Alimentatore orologio", "Cavo orologio", "Powerbank", "Cavo usb-c", "Multipla", "Auricolari", "Cavo usb-c 3m"],
+
+    "Utility": ["Borraccia", "Mascherina ffp2", "Occhiali da sole", "Tappi per le orecchie", "Fazzoletti"],
+
+    "Intimo": {
+        "Mutande": "numeroDiGiorni + 1",
+        "Calzini": "numeroDiGiorni",
+        "Pigiama": ["Maglietta", "Pantaloni"],
+        "Borsetta roba onta intimo": 1
+    }
+}

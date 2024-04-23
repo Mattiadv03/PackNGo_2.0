@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PackNGo.ComponiValigia">
     <VerticalStackLayout>
-        <Label x:Name="t"/>
+        <!-- Titolo -->
+        <Label
+            x:Name="labelTitolo"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1"
+            HorizontalOptions="Center" />
+        
+        
     </VerticalStackLayout>
 </ContentPage>

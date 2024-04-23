@@ -6,8 +6,9 @@ public partial class ComponiValigia : ContentPage
     int numeroNotti;
     string stagione;
     string tipologiaVacanza;
+    List<String> listaOptionalsScelti;
 
-    public ComponiValigia(string nomeVacanza, int numeroNotti, string stagione, string tipologiaVacanza)
+    public ComponiValigia(string nomeVacanza, int numeroNotti, string stagione, string tipologiaVacanza, List<String> listaOptionalsScelti)
 	{
 		InitializeComponent();
 
@@ -16,7 +17,14 @@ public partial class ComponiValigia : ContentPage
         this.numeroNotti = numeroNotti;
         this.stagione = stagione;
         this.tipologiaVacanza = tipologiaVacanza;
-
-        t.Text = tipologiaVacanza;
+        this.listaOptionalsScelti = listaOptionalsScelti;
+        
+        // Imposto il titolo in base al nomeVacanza
+        setTitolo();
 	}
+
+    public void setTitolo()
+    {
+        labelTitolo.Text = nomeVacanza;
+    }
 }

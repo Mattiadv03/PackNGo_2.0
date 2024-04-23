@@ -11,10 +11,17 @@
             HorizontalOptions="Center" />
 
         <!-- Optionals -->
-        <FlexLayout x:Name="flexLayoutTipologie_Optionals" JustifyContent="Center" HorizontalOptions="Center" Direction="Column" VerticalOptions="Start">
+        <FlexLayout x:Name="flexLayoutTipologie_Optionals" HorizontalOptions="Center" Direction="Column" VerticalOptions="Start">
             <!-- Popolo dinamicamente in base alle tipologie -->
         </FlexLayout>
-
+        
+        <!-- Componi -->
+        <Button 
+            x:Name="buttonComponi_Optionals"
+            Text="Componi"
+            HorizontalOptions="Center"
+            Clicked="ButtonComponi_Optionals_Clicked" />
+        
         <!-- Torna indietro -->
         <Button
             x:Name="buttonTornaIndietro_Optionals"

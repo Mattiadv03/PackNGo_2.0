@@ -14,7 +14,13 @@
         <StackLayout x:Name="layoutElementi_ComponiValigia" HorizontalOptions="Center" />
 
 
-
+        <!-- Seleziona/Deseleziona -->
+        <Button
+            x:Name="buttonSelezioneDeseleziona_ComponiValigia"
+            Text="Seleziona tutto"
+            HorizontalOptions="Center"
+            Clicked="ButtonSelezioneDeseleziona_ComponiValigia_Clicked" />
+        
         <!-- Torna indietro -->
         <Button
             x:Name="buttonTornaIndietro_ComponiValigia"

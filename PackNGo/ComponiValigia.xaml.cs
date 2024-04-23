@@ -21,10 +21,21 @@ public partial class ComponiValigia : ContentPage
         
         // Imposto il titolo in base al nomeVacanza
         setTitolo();
-	}
+
+
+        // Torna indietro
+        buttonTornaIndietro_ComponiValigia.Clicked += ButtonTornaIndietro_ComponiValigia_Clicked;
+
+    }
+
+    private void ButtonTornaIndietro_ComponiValigia_Clicked(object? sender, EventArgs e)
+    {
+        // Torno alla pagina Optionals
+        Navigation.PushAsync(new Optionals(nomeVacanza, numeroNotti, stagione, tipologiaVacanza));
+    }
 
     public void setTitolo()
     {
-        labelTitolo.Text = nomeVacanza;
+        labelTitolo_ComponiValigia.Text = nomeVacanza;
     }
 }

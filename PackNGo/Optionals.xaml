@@ -10,11 +10,9 @@
             SemanticProperties.HeadingLevel="Level1"
             HorizontalOptions="Center" />
 
-        <!-- Optionals -->
-        <FlexLayout x:Name="flexLayoutTipologie_Optionals" HorizontalOptions="Center" Direction="Column" VerticalOptions="Start">
-            <!-- Popolo dinamicamente in base alle tipologie -->
-        </FlexLayout>
-        
+        <!-- Popolo gli optionals dinamicamente in base alle tipologie -->
+        <FlexLayout x:Name="flexLayoutTipologie_Optionals" HorizontalOptions="Center" Direction="Column" VerticalOptions="Start" />
+
         <!-- Componi -->
         <Button 
             x:Name="buttonComponi_Optionals"

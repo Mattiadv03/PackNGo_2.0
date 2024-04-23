@@ -5,11 +5,21 @@
     <VerticalStackLayout>
         <!-- Titolo -->
         <Label
-            x:Name="labelTitolo"
+            x:Name="labelTitolo_ComponiValigia"
             Style="{StaticResource Headline}"
             SemanticProperties.HeadingLevel="Level1"
             HorizontalOptions="Center" />
         
-        
+        <!-- Inserisco gli elementi della valigia dinamicamente -->
+        <StackLayout x:Name="layoutElementi_ComponiValigia" HorizontalOptions="Center" />
+
+
+
+        <!-- Torna indietro -->
+        <Button
+            x:Name="buttonTornaIndietro_ComponiValigia"
+            Text="Torna indietro"
+            HorizontalOptions="Center"
+            Clicked="ButtonTornaIndietro_ComponiValigia_Clicked" />
     </VerticalStackLayout>
 </ContentPage>

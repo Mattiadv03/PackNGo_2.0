@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace PackNGo.Tabelle
+namespace PackNGo.Database.Tabelle
 {
     [Table("OggettiVacanze")]
     public class OggettiVacanze

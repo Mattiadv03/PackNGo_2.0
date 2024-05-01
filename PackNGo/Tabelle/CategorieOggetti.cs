@@ -10,5 +10,8 @@ namespace PackNGo.Tabelle
 
         [MaxLength(100), Unique, NotNull]
         public string nomeCategoria { get; set; }
+
+        [NotNull]
+        public bool isOpzionale { get; set; }
     }
 }

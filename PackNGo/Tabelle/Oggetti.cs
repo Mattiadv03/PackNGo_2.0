@@ -11,11 +11,8 @@ namespace PackNGo.Tabelle
         [MaxLength(100), Unique, NotNull]
         public string nomeOggettoFormattato { get; set; }
 
-        [MaxLength(100), Unique, NotNull]
-        public string nomeOggettoTrimmed { get; set; }
-
-        [NotNull]
-        public int numeroNecessario { get; set; }
+        [MaxLength(100), NotNull]
+        public string numeroNecessario { get; set; }
 
         public int idCategoria { get; set; }
     }

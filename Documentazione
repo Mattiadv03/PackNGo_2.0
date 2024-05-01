@@ -1,3 +1,8 @@
 Guida DB SQLite cachato su MAUI
 https://learn.microsoft.com/it-it/training/modules/store-local-data/4-exercise-store-data-locally-with-sqlite
 
+Documentazione MS Learn local databases
+https://learn.microsoft.com/en-us/dotnet/maui/data-cloud/database-sqlite?view=net-maui-8.0
+
+CRUD page for multiple table
+https://www.reddit.com/r/csharp/comments/1bziaox/how_do_you_create_multiple_tables_in_sqlite_local/

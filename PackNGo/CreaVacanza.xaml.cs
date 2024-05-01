@@ -1,10 +1,18 @@
+using SQLite;
+using PackNGo.Tabelle;
+
 namespace PackNGo;
 
 public partial class CreaVacanza : ContentPage
 {
-	public CreaVacanza()
+    private SQLiteAsyncConnection conn;
+
+    public CreaVacanza()
 	{
 		InitializeComponent();
+
+        // Inizializzo il database
+        InitDB();
 
         buttonTornaIndietro_CreaVacanza.Clicked += ButtonTornaIndietro_CreaVacanza_Clicked;
 
@@ -18,6 +26,22 @@ public partial class CreaVacanza : ContentPage
 
         imageButtonInverno_CreaVacanza.Clicked += ImageButtonInverno_Clicked;
 	}
+
+    private async Task InitDB()
+    {
+        // Controllo se esiste già la connessione al db
+        if (conn != null)
+            // Si, evito di ricrearla
+            return;
+
+        // No, mi connetto
+        conn = new SQLiteAsyncConnection(_dbPath);
+
+        // Creo le tabelle
+        await conn.CreateTableAsync<CategorieOggetti>();
+        await conn.CreateTableAsync<Oggetti>();
+        await conn.CreateTableAsync<TipologieVacanza>();
+    }
 
     // Creo la varibile del numero di notti
     private int numeroNotti = -1;

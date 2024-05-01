@@ -28,6 +28,7 @@ public partial class ScegliTipologia : ContentPage
     {
         // Leggo la tabella delle Tipologie
 
+
         if (data is not null)
         {
             foreach (var tipologia in listaTipologie)

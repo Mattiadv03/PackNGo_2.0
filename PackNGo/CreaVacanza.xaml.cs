@@ -41,6 +41,9 @@ public partial class CreaVacanza : ContentPage
         await conn.CreateTableAsync<CategorieOggetti>();
         await conn.CreateTableAsync<Oggetti>();
         await conn.CreateTableAsync<TipologieVacanza>();
+
+        // Popolo gli elementi del database
+
     }
 
     // Creo la varibile del numero di notti

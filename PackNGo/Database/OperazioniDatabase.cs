@@ -1,12 +1,11 @@
-﻿using HealthKit;
-using PackNGo.Database.Tabelle;
+﻿using PackNGo.Database.Tabelle;
 using SQLite;
 
 namespace PackNGo.Database
 {
-    public class OperazioniDatabase<Table> where Table : class, new()
+    public class OperazioniDatabase<Table> where Table : class, new() 
     {
-        private SQLiteAsyncConnection conn;
+        private SQLiteAsyncConnection? conn;
 
         private async Task InitDB()
         {
@@ -25,7 +24,7 @@ namespace PackNGo.Database
             await conn.CreateTableAsync<Tabelle.TipologieVacanza>();
             await conn.CreateTableAsync<Tabelle.Vacanze>();
 
-            // Popolo gli elementi del database
+            // Popolo il database
 
         }
 
@@ -51,6 +50,41 @@ namespace PackNGo.Database
         {
             await InitDB();
             return await conn.DeleteAsync(elemento);
+        }
+
+        public async void csvToDB(string percorsoCSV, SQLiteAsyncConnection conn, string nomeTabella, string[] nomiColonne)
+        {
+            // Leggo il file CSV
+            using (var sr = new StreamReader(percorsoCSV))
+            {
+                string line;
+                bool primaEsecuzione = true;
+                while((line = await sr.ReadLineAsync()) != null)
+                {
+                    var valori = line.Split(',');
+
+                    if (primaEsecuzione)
+                    {
+                        primaEsecuzione = false;
+                        continue;
+                    }
+
+                    // Crea l'istruzione INSERT con parametri
+                    string sql = $"INSERT INTO {nomeTabella} ({string.Join(",", nomiColonne)}) VALUES (@{nomiColonne[0]}, @{nomiColonne[1]}, ...)";
+
+                    // Aggiungi parametri per ogni valore
+                    using (var command = new SQLiteCommand(sql, conn))
+                    {
+                        for (int i = 0; i < valori.Length; i++)
+                        {
+                            command.Parameters.AddWithValue($"@{nomiColonne[i]}", valori[i]);
+                        }
+
+                        // Esegui l'istruzione INSERT
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
         }
     }
 
